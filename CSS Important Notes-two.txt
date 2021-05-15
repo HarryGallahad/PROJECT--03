@@ -1,0 +1,908 @@
+SELECTORS IN CSS
+i.) Element Selector - Set equal style applied to all the similar selectors.
+	<section>
+            <h1>Get the freedom you deserve!</h1>
+        </section>
+        <section>
+            <h1>Choose your Plan!</h1>
+        </section>
+In .css file:
+section {
+    background-color: #ff1b68;
+}
+
+h1 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+ii.) CLASS SELECTORS - The style is applied to all those elements which has the same class
+iii.) UNIVERSAL SELECTOR - It applies the same styles to the entire page.
+* {
+    background-color: #ff1b68;
+}
+
+iv.) ID SELECTORS - ID tag is used to apply the style to a single element throughout the page.
+<h2 id="id-title">This is the ID tag representation</h2>
+
+In .css file,
+#id-title {
+    background-color: #ff14ed;
+    color: white;
+}
+
+v.) Attribute Selector - This tag set equal styles to all the elements with attribute.
+<button disabled>Click</button>
+
+In .css file,
+[disabled] {
+    color: rebeccapurple;
+}
+
+Now Note one important thing, whenever you want to apply the style to a single element, the first selector that should be implemented is the class selector.
+
+SEPECIFITY
+To understand specifity, you need to understand the meaning of cascading. The term cascading means that multiple rules can be applied to the same elements. Now, this
+results into the conflicts as which element gets the higher priority. Thus, to resolve the conflicts that arise from these set of rules, we use specifity.
+NOW THE PRIORITIES ARE DEFINED AS:
+i.) LOWEST PRIORITY -> <tag> and ::pseudo-element selectors has the lowest priority.
+ii.) NEXT LEVEL PRIORITY -> .class, :pseudo-class and [attribute] selectors has 1 level higher priority.
+iii.) HIGHER PRIORITY -> #ID selectors
+iv.) INLINE STYLES -> They have the highest priority.
+ALSO KEEP IN MIND, THAT INHERITANCE HAS THE LOWEST PRIORITY, MUCH LOWER THAN THE BROWSER DEFAULTS.
+
+UNDERSTANDING INHERITANCE
+Inheritance means that an element also inherits some of the styles of the parent element. The inheritance is applied to the
+body tag as the body tag covers the entire code of the elements. Now to implement the .css file, we write like this:
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-title {
+    color: #2ddf5c;
+    font-family: inherit;
+}
+
+ADDING COMBINATORS
+A combinator allows us to combine multiple selectors to be more precise about waht or which of the tag we want to select.Now there are four very imporant combinators:
+i.) Adjacent Sibling Combinator -> div + p {}, or div + p + a {}
+The Adjacent Sibling combinator is defined like this: h2 + p {color: red;} Now This will assign a red color to all the p tags that directly follow the h2 tag. that means
+the p tags that directly just come below the h2 tag, and those p tags which don't come directly under the h2 tag will not get the red color. The same is the case with
+like this- div + p + a {}
+
+ii.) General Sibling Combinator -> div ~ p {}
+The General sibling combinator is like this - h2 ~ p {color: red;}. Here all the p tags which either directly or indirectly fall under the h2 tag will get a red color.
+For General sibling there has to be an h2 tag above the p tag or tags, and it doesn't matter weather it is directly or indirectly above the p tag.
+
+iii.) Child Combinator -> div > p {}
+The child combinator is like this - div > p {color: red;}. Here all the p tags that is a direct child of a div will get red color. This combinator will only apply the
+style if you are a direct child of the div tag.
+
+iv.) Descendant Combinator -> div p {}
+It is like this - div p {color: red;} Here all the p tags will get a red color, and it doesn't matter weather they are a direct or not a direct child of the div(parent tag)
+and same is the case with as many tags as possible.
+
+CSS BOX MODEL
+Every element in HTML is interpreted as a Box-Model by CSS. It is visible in the chrome developer tools area below the inherited part.
+Now, every element has a content, a blue area, the most center part(blue color when highlighted), then comes padding(green color), then border(light yellow color) and
+then comes margin(orange part). The margin is the outermost part, and it is the distance between an element and its next element.
+
+UNDERSTANDING THE BOX MODEL
+There are 4 main parts for the CSS Box Model: Content, Padding, Border and Margin. 
+The order of the values are just as mentioned : Content, Padding, Border, Margin. A simple example is like this:
+	<section id="product-overview">
+     	      <h1>Get the freedom you deserve!</h1>
+	</section>
+and Now in the .css file, we add the content like this:
+#product-overview {
+    background-color: #ff1b68;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 20px;
+}
+REMEMBER THAT ALL THE VALUES(padding, border and margin) ARE NOT NECESSARY, MEANS YOU CAN ADD EITHER ONE, OR TWO, OR ALL AS PER THE NEED.
+
+MARGIN-COLLAPSING
+Now in a web-page, there is a default margin applied from the left and the right(8px), which comes from the browser-defaults, or the browser applies these margin values from the left 
+and the right.
+Now we can remove this by adding this code:
+body {
+    margin: 0;
+}
+
+Now we understand the concept of margin collapsing: If you get two elements next to each other, then the margins betweeen them collapse to one margin and bigger margin
+wins. This is not a bug, this is on purpose: THE REASON FOR MARGIN COLLAPSING IS THAT YOU DON'T GET TWO BIG DISTANCES BETWEEN THE ELEMENTS, i.e. TWO BIG SEPERATIONS OR
+MARGINS.
+
+SHORTHAND PROPERTIES
+Shorthand properties combine the values of multiple properties in a single property. A very simple example is like this:
+
+border-width: 2px;
+border-style: dashed | solid;
+border-colr: red;
+
+Now a simple shorthand is like this: border: 2px solid red;
+Now if you don't specify any one of these, the default will be used.
+
+SHORTHAND FOR MARGINS
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+NOW THE SHORTHAND FOR MARGIN IS -> margin: 5px 10px 15px 20px; and this means TOP, RIGHT, BOTTOM, LEFT.
+Now if you want the complete same margin on every side -> margin: 20px;
+THE SAME IS THE CASE WITH PADDING.
+
+UNDERSTANDING BOX SIZING
+Talking about the change of the height and width is 
+
+ADDING A SIMPLE NAVIGATION
+The simple code for the navigation-bar is :
+<header>
+        <div class="div">
+            <a href="#">uHost</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </nav>
+</header>
+
+Now we need to add some styles for the header, thus we add the contents in a class main-header and then we add the styles, like this:
+<header class="main-header">
+and now in the .css file,
+.main-header {
+    background-color: #2ddf5c;
+    padding: 8px 16px;
+    width: 100%;  
+}
+
+UNDERSTANDING THE DISPLAY PROPERTY
+The naming of classes pattern that should be followed is BEM(BLOCK ELEMENT MODIFIER).
+Now the display property allows us to change the behaviour of an element from block to inline, or even to inline-block(mixture) or none. Now the meaning of all this is:
+IN HTML, WE HAVE GOT INLINE AND BLOCK LEVEL ELEMENTS.
+INLINE -> like anchor tages, which are rendered in the same line, means that are aligned in same line. If you inspect the elements, then blue content takes full
+available width substracted by margin, padding or values taken by other elements.. However, anchor tags only takes the available space its content needs. Both actually
+use box-model, though for inline elements, we can't really set margin-top or margin-bottom because that's not how inline elements work, they are not positioned in a
+way like block elements, means they don't take a new line necessarily.Hence, margin-top or margin-bottom is difficult, as they might be in-line with other elements.
+BUT WE CAN CHANGE THE BEHAVIOUR USING display property. 
+e.g. ->    <a href="customers/index.html" style="display: block;">Customers</a>
+Now the customer anchor-tag(although its behaviour is inline as default, but its changed to block, now it will come in a new line and will take full available width).
+<header class="main-header">
+        <div class="div">
+            <a href="index.html">uHost</a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="packages/index.html">Packages</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="customers/index.html">Customers</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="start-uploading/index.html">Start Hosting</a>
+                </li>
+            </ul>
+        </nav>
+</header>
+and the .css code file is like this:
+.main-header {
+    background-color: #2ddf5c;
+    padding: 8px 16px;
+    width: 100%;  
+}
+
+.main-nav {
+    display: inline-block;
+}
+
+.main-nav__item {
+    display: inline-block;
+}
+
+NOW HERE IS ANOTHER OPTION, THAT IS REALLY USEFULL NOW, AND THE PROPERTY IS:
+display: inline-block;
+THIS MIXES THE BEHAVIOUR OF BOTH INLINE AND BLOCK LEVEL ELEMENTS.
+Means that like inline elements, these elements can go next to each other now, but they still behave like block level elements for setting top and bottom margins,
+or setting paddings. Things which are not possible for inline elements.
+Now if we add a padding to the anchor tag,
+<a href="start-uploading/index.html">Start Hosting</a> : i.e. padding: 20px; it is applied to the left and right but just as margin-top and margin-bottom, it doesn't
+really has great effect. If you on the other hand, set that on surrounding list items, i.e. inline-block, then it is also applied in all the directions: TBRL.
+
+
+STYLING NAVIGATION MORE BY PUTTING ELEMENTS IN THE SAME LINE
+Now our goal is, to turn the elements of two tags to fall into one line and the elements are:
+<div class="div">
+            <a href="index.html">uHost</a>
+</div>
+
+and this area of code: <nav class="main-nav"></nav>
+
+Now for the div, we can use a combinator in the .css file:
+.main-header > div {
+    display: inline-block;
+}
+
+and in the .main-nav class, we add code like this:
+.main-nav {
+    display: inline-block;
+}
+
+Now this will fall in same line.
+Now our target is to move the nav elements towards the right(Packages, Customers and Start Hosting). Now for this, we can put a property to the main-nav class like this
+.main-nav {
+    display: inline-block;
+    text-align: right;
+}
+
+Now this might not have an effect because ul lists sits inside a nav, which is a inline-block element and thus doesn't take the full available width. It has only as
+much width as its content needs. So we need to have a width, and width should be the width of our header substracted the width of div at the beginning. Now then also,
+we have a problem as the unordered-list there still has an additional padding(padding-left) and thus we should fix that. To fix this, we can add the class of <ul> items
+these properties:
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+Now in the main-nav class, we can add the width: 100%, and thus elements will fall towards the right.
+But the issue is, the <ul> items will fall in the next line. So what we need to do is: take 100% - the width of the div that holds the brand on left, i.e.
+<div class="div">
+            <a href="index.html">uHost</a>
+</div> 
+
+and thus, we add the elements like this:
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 53px);
+}
+
+NOW OUR TARGET IS TO STYLE THE NAVIGATION BAR CONTENTS AND THE CODE FOR THIS IS
+In index.html file, the code is:
+<body>
+    <header class="main-header">
+        <div class="div">
+            <a href="index.html">uHost</a>
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="packages/index.html">Packages</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="customers/index.html">Customers</a>
+                </li>
+                <li class="main-nav__item start-hosting__cta">
+                    <a href="start-uploading/index.html" class="anchor-button_cta">Start Hosting</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="product-overview">
+            <h1>Get the freedom you deserve!</h1>
+        </section>
+        
+    </main>
+
+</body>
+
+in main.css file, the code is:
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+#product-overview h1 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#product-overview {
+    background-image: url(Images/freedom.jpg);
+    /* background-color: #ff1b68; */
+    width: 100%;
+    height: 900px;
+    padding: 10px;
+    
+}
+
+.main-header {
+    background-color: #2ddf5c;
+    padding: 10px 16px;
+    width: 100%;  
+}
+
+.main-header > div {
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: bolder;
+   
+}
+
+.main-header a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 54px);
+}
+
+.main-nav__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__item {
+    display: inline-block;
+}
+
+.main-nav a{
+    padding: 0px 12px;
+    font-family: 'Merriweather', serif;
+    font-size: large;
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+}
+
+.start-hosting__cta {
+    border: 3px solid white;
+    padding: 9px;
+    border-radius: 8px;
+    background-color: white;
+    color: #ff1b68;
+}
+
+.start-hosting__cta:hover,
+.start-hosting__cta:active {
+    /* background-color: rgb(99, 98, 98); */
+    background-color: #ff1b68;
+    cursor: pointer;
+}
+
+
+ADDING STYLES IN FORMS OF VERTICAL COLUMNS
+Just like the view of www.sarkariresult.com website, there down we can look at three columns, just like that we can add as many columns as we like and the html code for
+this is:
+<section id="plans">
+            <div>
+                <article>
+                    <h1>FREE</h1>
+                    <h2>$0/month</h2>
+                    <h3>For hobby projects or small teams</h3>
+                    <ul>
+                        <li>1 workspace</li>
+                        <li>Unlimited Traffic</li>
+                        <li>1GB Storage</li>
+                        <li>Basic Support</li>
+                    </ul>
+                    <div>
+                        <button>CHOOSE PLAN</button>
+                    </div>
+                </article>
+                <article>
+                    <h1>RECOMMENDED</h1>
+                    <h1>PLUS</h1>
+                    <h2>$29/month</h2>
+                    <h3>For ambitious Projects</h3>
+                    <ul>
+                        <li>5 Workspaces</li>
+                        <li>Unlimited Traffic</li>
+                        <li>100 GB Storage</li>
+                        <li>Plus Support</li>
+                    </ul>
+                    <div>
+                        <button>CHOOSE PLAN</button>
+                    </div>
+                </article>
+                <article>
+                    <h1>PREMIUM</h1>
+                    <h2>$99/month</h2>
+                    <h3>Your Enterprise Solution</h3>
+                    <ul>
+                        <li>10 Workspaces</li>
+                        <li>Unlimited Traffic</li>
+                        <li>Unlimited Storage</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <div>
+                        <button>CHOOSE PLAN</button>
+                    </div>
+                </article>
+            </div>
+</section>
+
+Now our primary goal is to decorate these article tags. Now to do so, add a class to the article tag, of any name(let's say class="plans") and in this class, 
+we add features like this:
+.plan {
+    background-color: #d5ffdc;
+    text-align: center;
+    padding: 16px;
+    margin: 8px 0px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+
+text-align: center aligns all items to the center, padding: gives a distance the edges of box and content of it, margin: gives distance between each other article tag,
+display: puts all elements in a row(horizontally), else they will be setup vertically, width: limits their width to the amount value you gave(30%) of the surrounding
+container, vertical-align: it vertically aligns all the elements in the middle
+
+HIGHLIGHTING THE PLANS
+Now in our code, we need to style the recommended plan to stand out of the three plans, thus we add the code in .html file like this:
+<article class="plan plan--highlighted">
+     <h1 class="plan__annotation">RECOMMENDED</h1>
+</article>
+Now in the .css file, the style code looks like this:
+
+.plan--highlighted {
+    background-color: #19b84c;
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+Now box-shadow works like this: x-axis y-axis blurriness-value spread(how much value spread beyond borders) shadow-color(rgb, rgba)
+e.g. box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+rgba(0, 0, 0, 0.6) -> black and 0.6=a known as alpha channel(transparency) and 1- opaque, 0- fully-transparent.
+rgba(225, 225, 225) -> white
+
+STYLE ANY BADGE WITH BORDER-RADIUS
+For this, we add a class to the item we want to decorate and then we give the style to the element.
+<h1 class="plan__annotation">RECOMMENDED</h1>
+
+In the .css file, we add the code like this:
+.plan__annotation {
+    border: 3px solid white;
+    padding: 8px;
+    border-radius: 7px;
+    background-color: white;
+    color: #19b84c;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+STYLING THE LIST
+There are two ways to achieve this, and these ways are:
+i.) Add a class - Here we can add a class to each of the list item and give the property to it like this:
+<ul class="plan__features">
+    <li class="plan__feature">1 workspace</li>
+     <li class="plan__feature">Unlimited Traffic</li>
+     <li class="plan__feature">1GB Storage</li>
+     <li class="plan__feature">Basic Support</li>
+</ul>
+
+and we give the style like this:
+.plan__feature {
+    margin: 8px 0px;
+}
+
+or we can simply use a combinator like this:
+.plan__features li {
+    margin: 8px 0px;
+}
+
+STYLING THE TITLES WITH THE SAME STYLING
+Here in the example, we have got two elements, the Price name and value. Thus we add the two classes to each of the elements, i.e. class="plan__title" and
+ class="plan__value"
+Now the .html code is:
+<h1 class="plan__annotation">RECOMMENDED</h1>
+<h1 class="plan__title">PLUS</h1>
+<h2 class="plan__value">$29/month</h2>
+
+and now the code in the .css file is like this:
+.plan__title {
+    color: #0e4f1f;
+}
+
+.plan__value {
+    color: #858585;
+}
+
+.plan__features li {
+    margin: 8px 0px;
+}
+
+.plan--highlighted .plan__value {
+    color: #0e4f1f;
+}
+
+.plan--highlighted .plan__title {
+    color: white;
+}
+
+STYLING A BUTTON
+When you simply add a button, there are default looks that are assigned to it by the browser and we intend to change that, and to do so, we cam select the <button> tag
+but there might be a lot of other buttons on our page and using the button tag will give same style to all of our buttons, thus we use the class selectors instead.
+inherit is a keyword that forces the inherited styles to be applied.
+Thus we now add a class to all the buttons and apply the styles to the buttons, like this:
+<button class="button">CHOOSE PLAN</button>
+and now we add the decoration classes like this:
+
+.button {
+    background-color: #0e4f1f;
+    color: white;
+    font: inherit;
+    padding: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+Now in case you get any outline around the button, you can resolve this like this:
+
+UNDERSTANDING OUTLINES
+When you click a button and get this blue outline, and we can inspect in the inspect > :hov where you can get all these features like this -> :active, :focus, :focus-within 
+and so on. The blu outline is due to the :focus value class. The outline is not a property od box model, but the border is, and which is applied even after the border
+Now we can resolve it like this:
+
+.button:focus {
+    outline: none;
+}
+
+STYLING HEADLINES
+Now to style any of the section, the first thing that is required is a strong background color and that can be done by adding the style to the main wrapping tag, i.e.
+in our case is the section tag, and we can assign an ID selector as the value assigned will be used only for once. The code is like this:
+<section id="key-features">
+    <h1 class="section-title">Many Good Reasons to Stick around</h1>
+</section>
+
+and the code in the .css file is like this:
+#key-features {
+    background-color: #ff1b68;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+#key-features .section-title {
+    color: white;
+}
+
+The overall code for this key feature looks like this:
+<section id="key-features">
+            <h1 class="section-title">Many Good Reasons to Stick around</h1>
+            <ul class="key-feature__list">
+                <li class="key-feature">
+                    <div>
+
+                    </div>
+                    <p class="key-feature__description">3,857,000 Trusting Customers</p>
+                </li>
+                <li class="key-feature">
+                    <div>
+                        
+                    </div>
+                    <p class="key-feature__description">99% Uptime Gurantee</p>
+                </li>
+                <li class="key-feature">
+                    <div>
+
+                    </div>
+                    <p class="key-feature__description">Lightning Fast CDN</p>
+                </li>
+            </ul>
+</section>
+
+and the code for the .css file is like this:
+#key-features {
+    background-color: #ff1b68;
+    padding: 25px;
+    margin-top: 80px;
+}
+
+#key-features .section-title {
+    color: white;
+}
+
+.key-feature__list {
+   text-align: center;
+   margin: 0px;
+   padding: 0px;
+}
+
+.key-feature {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    width: 30%;
+    vertical-align: top; /* This aligns that all the key features are vertically aligned on top */
+}
+
+.key-feature__description{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+Now the next thing which we want to implment the circle over these three paragraphs, where we will implment the Images, we will do this later, but for now, we will
+just make the container for the images(like a circle).
+
+ADDING A CIRCLE(FOR AN IMAGE HOLDER)
+To add such a circle, we at first create a <div></div> tag and then we assign a class to this div, The overall code for this is like this:
+
+In the .html file, we write the code like this:
+<div class="key-feature__image">
+
+</div>
+and now the code for the .css file is like this:
+.key-feature__image {
+   background-color: #ffcede; 
+   width: 128px;
+   border: 2px solid #424242;
+   border-radius: 50%; /* this means that it will round everything such that we get exactly perfect circle */
+   height: 128px; /* The height, to get a perfect circle has to match the width */
+   display: inline-block;
+}
+
+Now we need to center the circles, and there is a nice trick to that, and for that we got the 'margin' property, but we don't know how much margin we need to center 
+this, and thus we can achieve it like this: "margin: auto;"
+THIS WILL AUTOMATICALLY FILL THE SPACE TO THE LEFT AND THE RIGHT EQUALLY
+
+ADDING A FOOTER
+Remember to add a footer, we add it at the last, if we have a <nav></nav> tag, then we add after to closing of nav tag and similarly to the closing of </main> tag, if
+we have a main tag open.
+The simple code for the footer is like this:
+<footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Support</a>
+                </li>
+                <li>
+                    <a href="#">Terms of Use</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+and noe we add the classes to these footer element. The main class should be named: class="main-footer". The overall code is like this:
+In .html file, the code is like this:
+<footer class="main-footer">
+        <nav class="footer-nav">
+            <ul class="main-footer__links">
+                <li class="main-footer__link">
+                    <a href="#">Support</a>
+                </li>
+                <li class="main-footer__link">
+                    <a href="#">Terms of Use</a>
+                </li>
+            </ul>
+        </nav>
+</footer>
+
+The css code is like this:
+.main-footer {
+    background-color: black;
+    color: white;
+    padding: 48px;
+    margin-top: 48px;
+}
+
+.main-footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main-footer__link {
+    display: inline-block;
+    margin: 0px 48px;
+    text-align: center;
+}
+
+.main-footer__links a {
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.main-footer__links a:hover,
+.main-footer__links a:active {
+    color: rgba(230, 225, 225, 0.666);
+}
+
+NEXT IMPORTANT TOPIC
+Now since we have done creating the first page, let's just focus on adding a new page, and the code which is repeating for each page should be kept in a separate
+shared.css file
+
+STYLING A COMPLETE ANCHOR TAG BOX
+Now at first let's create a distance from top by adding a margin of let's say 32px to the main tag. Next we add the class package to each of the <section> tag, like
+this:
+<section class="package">
+</section>
+
+Now in this package class, we limit the width to 80% of the page-width, like this:
+.package {
+   width: 80%;
+}
+The complete .css file code looks like this:
+.package {
+    width: 80%;
+    margin: 16px 0px;
+    border: 4px solid #0e4f1f;
+    border-left: none;
+}
+
+Now we want to work on the text, thus we target the anchor tag, using a combinator, like this:
+.package a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+padding: 32px;
+}
+
+Here color: inherit to inherit the default color, and display: block to ensure that the anchor tag takes the full available width of the surrounding section.
+
+STYLING OUR PACKAGE BOXES
+Now to style each of the element in the section box, we add classes to each of the elements like this:
+<h1 class="package-title">Our PLUS Plan</h1>
+<h2 class="package-subtitle">The Most Popular choice of our customers</h2>
+<p class="package-info">Benefit from increased stoarage and faster support to ensure that your mission critical data and applications are always available</p>
+
+Now the styling of the sections is like this:
+.package-subtitle {
+    color: #979797;
+}
+
+.package-info {
+    padding: 16px;
+    border: 1px solid #0e4f1f;
+    font-size: 20px;
+    color: #0e4f1f;
+background-color: white;
+}
+
+Now let's say we want to add the an individual color to each of the plans box, thus for that, we use the id selector like these: id="plus", id="free", id="premium"
+and we style them like this:
+#plus {
+    background-color: #d5ffdcf2;
+}
+
+#free {
+    background-color: #eafcedf2;
+}
+
+#premium {
+    background-color: #0e4f1ff2;
+}
+
+Now some of the additional pieces of codes which we need to implement are like this:
+#premium .package-title {
+    color: white;
+}
+
+#premium .package-subtitle {
+    color: #bbb;
+}
+
+Now we just need to add the hover effect like this:
+.package:hover,
+.package:active {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-color: #ff5454;
+}
+
+ADDING FLOAT TO PACKAGE
+Adding float means we plan to shift any box towards right or left. In css, by-default it is aligned towards left and now we plan to shift it towards the right.
+We use the feature "float", untill we don't learn flex-box
+FLOAT
+float means that you override the default positioning and tell the browser to push an element to the left or right of the page. 
+We can use this float effect exactly where we want to implement. Thus, we implement them like this:
+#free {
+    background-color: #eafcedf2;
+    float: right;
+}
+
+But this will create an heck, the next element which is just after the element which we have floated takes its place. Now to fix this effect, what we do is add a
+div with a class name of your choice just after the element where we have implemented the float, and we define this class in the .css file with property -> clear: both;
+<section class="package" id="free">
+            <a href="#">
+                <h1 class="package-title">Our FREE Plan</h1>
+                <h2 class="package-subtitle">An extremely solid start into our hosting world</h2>
+                <p class="package-info">Get Started Immediately at zero cost</p>
+            </a>
+</section>
+<div class="clear-fix"></div>
+
+and in the .css file, we define the class with property like this:
+.clear-fix {
+    clear: both;
+}
+
+also to fix the border, we use the class like this:
+#free {
+    background-color: #eafcedf2;
+    float: right;
+    border-right: none;
+    border-left: 1px solid #0e4f1f;
+    text-align: right;
+}
+
+Now after adding all this, we see one thing that the left-border doesn't turn red on hover, and we can fix it like this:
+#free:hover, 
+#free:active {
+    border-left-color: #ff5454;
+}
+
+UNDERSTANDING POSITIONING
+The default position property applied is the static value, but there are other options which we can use like the absolute, relative, fixed and sticky. We will explore 
+all of these one by one.
+
+A FIXED NAVIGATION BAR
+To add a fixed navigation bar, we need to find the main wrapper class and then to that class, we just add the property of "position: fixed" to the css code in the .css
+file. e.g. 
+.main-header {
+    background-color: #2ddf5c;
+    padding: 10px 16px;
+    width: 100%;  
+    position: fixed;
+}
+
+Now here we might get a situation, suppose if we have a margin to the main element, then there will be a chance that the element will not be positioned correctly. Now 
+if there is a margin, thus we add two properties to the same class where we have added the position: fixed, and these two properties are: left: 0; top: 0; 
+
+USING POSITION PROPERTY TO ADD A BACKGROUND IMAGE
+Just above the <header> selector, we add a background class on top and then we add the properties to the background like this:
+<div class="background"></div>
+
+.background {
+    background-image: url("../Images/plans-background.jpg");
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+But this will create an issue, such that the image will be taken up on top on content but we want it at the background. Now to understand this, we need to understand
+the z-index.
+
+UNDERSTANDING Z-INDEX
+
+
+ADDING A BADGE TO ANY BOX OR A PACKAGE
+h2.package-badge and then press tab, this will add a class of package-badge to the h2 element like this: <h2 class="package-badge"></h2>
+
+BACKGROUNDS AND IMAGES
+
+UNDERSTANDING BACKGROUND-SIZE
+The property "background" of css is just a short-hand, instead we can use the background-color and background-image as per the property needs of the background property.
+The other background full in-hand properties are: background-color, background-image, background-size, background-clip, background-origin and so on.
+
+Here we are going to discuss background-size, as it seems to be appropriate property for sizing the images. Now we add the property like this:
+background-size: 100px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

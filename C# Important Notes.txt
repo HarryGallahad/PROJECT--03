@@ -1,0 +1,1593 @@
+C# was designed in 2000 by Anders Hejlsberg                                                                                                                                                                                                          C# was invented by Anders Hejlsberg in year 2000.
+CLR: Common language runtime
+CIL: Common Intermediate Language is Assembly Language
+MSIL: Microsoft Intermeditae Language
+JIT: Just in Time Complier inside of CLR compiler
+C# is a case Sensitive language, i.e. var and VAR are two different keywords with entirely different meanings(however there is no such keyword as VAR)
+MSIL to Native Code 
+Native code is the code which computer understands, which is also known as Executable Code
+ Console.WriteLine("Your Name is: {0}", name);
+ Console.WriteLine("Your Name is: {0}, {1}", fname, lname);
+ctrl +k ctrl +c ctrl press kare huye hi comment
+ctrl + k ctrl + u press kare huye hi uncomment
+
+	    THE STRING DATA PRINTING ON CONSOLE
+	    Console.WriteLine("Enter Your First Name");
+            string fname = Console.ReadLine();
+            Console.WriteLine("Enter Your Last Name");
+            string lname = Console.ReadLine();
+            Console.WriteLine("Your Name is " + fname + " " + lname);
+            Console.ReadLine();
+
+            THE STRING TO INTEGER CONVERSION
+ 	    Console.WriteLine("Enter the first Number");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Second Number");
+            int num2 = int.Parse(Console.ReadLine());
+            int sum = num1 + num2;
+            Console.WriteLine("The Additon result is " + sum);
+
+VALUE OF BUILT-IN TYPES
+Console.WriteLine(int.MaxValue);
+
+
+FLOATS, DOUBLES, DECIMALS
+	    float a = 23.4778774f;
+            double b = 887954.4758d;
+            decimal c = 789456132.145987748m;
+Pre-fixes with double is not mendatory, while with float and decimal is mendatory
+
+STRING AND CHARACTER DATA TYPES
+String stores multiple characters in a single variable. 
+Double Quotes are used with string data types. 
+CHAR stores single character at a time in a variable.
+Single Quotes will be used for CHAR data type
+
+ESCAPE SEQUENCE
+Escape sequence is used to print the string data with the appearance of double quotes
+e.g. ->  string a = "\"Ankur Goswami\"";
+IN SINGLE QUOTE ->  string a = "\'Ankur Goswami\'";
+NEW LINE -> string a = "One\nTwo\nThree";
+
+VERBATIM LITERAL
+string x = "C:\\Users\\Ankur Goswami\\source\\repos\\LEGACIES\\LEGACIES";
+To give path, and thus for 1 slash, we use double back slash
+Now if we don't want to use the double slash, we can use the @ literal like this -> 
+string x = @"C:\Users\Ankur Goswami\source\repos\LEGACIES\LEGACIES"; 
+This is called Verbatim Literal whih ignores all the escape sequence
+
+DATA TYPES CONVERSION
+There are two types of conversion, the Implict type conversion and the expilict type conversion.
+Implict conversion - the .net compiler itself performs the conversion
+Explict conversion - The USER has to perform the conversion explicitly itself.
+
+IMPLICT TYPE CONVERSION
+            float a = 20;
+            float b = a;
+
+EXPLICT TYPE CONVERSION'
+	    float a = 20.45f;
+            int b = Convert.ToInt32(a);
+            Console.WriteLine(b);
+
+Convert class is made itself only for the process of conversion
+
+STRING TO INTEGER CONVERSION
+ 	    string a = "50";
+            string b = "60";
+            int c = Convert.ToInt32(a) + Convert.ToInt32(b);
+            Console.WriteLine(c);	
+The Parse function takes the string into itself
+
+CONVERSION OF STRING VALUES TO FLOAT
+	    string a = "50.234";
+            string b = "60.443";
+            float c = float.Parse(a) + float.Parse(b);
+            Console.WriteLine(c);
+
+A POINT TO REMEMBER
+Access modifiers are used only when creating data types in class, and not inside of the methods.
+
+STANDARD DATE AND TIME FORMAT SPECIFIERS
+Date and time is fetched from the system and are displayed into our application. Various types of date and time specifiers are :-
+i.) Short Date
+    DateTime dt = DateTime.Now;
+    Console.WriteLine("The Current date is: {0:d}", dt);
+
+ii.) Long Date
+    DateTime dt = DateTime.Now;
+    Console.WriteLine("The Current date is: {0:D}", dt);
+
+iii.) Full date and short Time
+
+
+OPERATORS
+ARTHEMETIC OPERATORS
+Arithmetic operators are known as Binary operators, as they need minimum two operands to perform the calculation. Arithmetic operators are placed between the operands
+and thus the calculation is performed. The types of arithmetic operators are -> +, -, /, *, %.
+
+RELATIONAL OR COMPARISON OPERATORS
+The relational operators make a comparison between two operands and return a boolean value, i.e. true or false
+The types of relational operators are -> ==, !=, >, <, >=, <=.
+
+LOGICAL OPERATORS OR CONDITIONAL OPERATORS
+The logical operators perform the boolean logical operations on both the operands. They return a boolean value based on the logical operator used.
+There are two types of conditional operators -> 
+i.) CONDITIONAL AND (&&)
+ii.) CONDITIONAL OR (||)
+
+The values based on these operators are -> 
+i.) CONDITIONAL AND OPERATOR -> Consider a case where the USER has to test for the conditions, let's say 5 conditions using the AND operator. Thus the working scenario 
+for the AND operator is that all the 5 conditions will have to be true in order to display a correct result.
+
+ii.) CONDITIONAL OR OPERATOR -> Consider a case where the USER has to test for the conditions, let's say 5 conditions using the or operator. Thus the working scenario 
+for the or operator is that out of all the 5 conditions, there will only 1 condition that needs to be true to get the expected result. 
+THERE IS A BEST PRACTICE CONSIDERED THAT WHENEVER YOU PUT A CONDITION, YOU PUT IT INTO A BRACKET LIKE THIS ()
+
+
+ASSIGNMENT OPERATORS
+Assignment operators are used to assign the value on the right side operand to the operand on the left side using an equal sign. There are two types of assignment 
+operators :-
+i.) Simple Assignment Operators : This is used to pass a value to a variable or to pass the result of an expression to a variable.
+ii.) Compound Assignment Operators : These are formed by combining the simple assignment operator with the arithmetic operator. The compound assignment operators are:
++=, -=, *=, /=, %=.
++= : a = a + 1;
+similarly for all the compound operators
+
+INCREMENT AND DECREMENT OPERATORS
+The Increment and decrement operators increment or decrement the values of the variables by 1 respectively.The Increment and decrement values are defined in terms
+of pre-increment and post-increment.
+PRE-INCREMENT or PRE-DECREMENT
+Pre Increment means the value is first incremented or decremented and then it is assigned to the variable. e.g. ->
+	    int a = 10;
+            Console.WriteLine(++a);
+Here The result will be 11.
+
+POST-INCREMENT or POST-DECREMENT
+Post Increment or Post Decrement means the value is first assigned and then it is incremented by 1 and then the incremented value is displayed in next line.
+	    int a = 10;
+            Console.WriteLine(a++); 10
+            Console.WriteLine(a); 11
+
+TERNARY OPERATORS
+This is a special kind of operator that yields a result on behalf of a boolean expression, that work on three operators.These are also known as Ternary operators.
+These are also known as alternative of If-else statements.
+The general working expression is -> (bolean expression) ? Condition A : Condition B;
+            int a = 20;
+            string b = (a > 30) ? "A is greater" : "A is lesser";
+            Console.WriteLine(b);
+
+OPERATOR PRECEDENCE
+Operator precedence is defined as the order in which the arithmetic operators are executed. When the operators have same precedence, the order is exectued in 
+same level from left to right.
+/ and * have the highest priority and then the priority levels are of + and -
+the () has the highest priority.
+
+DECISION MAKING STATEMENT
+i.) IF-ELSE
+If-else statements are used to terminate a particular condition on behalf of the match and the nested if statements work on the same method as per the If-else statement.
+
+ii) SWITCH CASES
+Switch cases are used to perform the execution of the task and thus when there are too many switch cases and thus due to multiple nesting of the switch cases, the 
+programme becomes difficult to read and implement, thus the Switch cases come into play, where the USER executes the condition on behalf of the matching executable 
+condition.
+ int Week_number = 2;
+            switch(Week_number)
+            {
+                case 1:
+                    Console.WriteLine("Monday");
+                    break;
+                case 2:
+                    Console.WriteLine("Tuesday");
+                    break;
+                case 3:
+                    Console.WriteLine("Wednesday");
+                    break;
+                case 4:
+                    Console.WriteLine("Thursday");
+                    break;
+                case 5:
+                    Console.WriteLine("Friday");
+                    break;
+                case 6:
+                    Console.WriteLine("Saturday");
+                    break;
+                case 7:
+                    Console.WriteLine("Sunday");
+                    break;
+            }
+The switch case works with the kind of data that is being passed in a variable, and the passed value matches with only one of the case. Now if however, none 
+of the cases match, thus the value used is the default, like this :
+                 default:
+                    Console.WriteLine("You are not the Member of the group");
+                    break;
+NESTED SWITCH CASE
+            Console.WriteLine("Kindly Enter the Pizza Name:");
+            Console.WriteLine("The available options are-> 'FAJITA', 'CHEESE BURST', 'VEGGIE-SUPREME', 'REGULAR', 'FARM-FRESH'");
+            string pizza = Console.ReadLine();
+
+            switch (pizza)
+            {
+                case "FAJITA":
+                    Console.WriteLine("THE FAJITA FLAVOUR IS SELECTED");
+                    break;
+                case "CHEESE BURST":
+                    Console.WriteLine("THE CHEESE BURST IS SELECTED");
+                    break;
+                case "VEGGIE-SUPREME":
+                    Console.WriteLine("THE VEGGIE-SUPREME IS SELECTED");
+                    break;
+                case "REGULAR":
+                    Console.WriteLine("THE REGULAR PIZZA IS SELECTED");
+                    break;
+                case "FARM-FRESH":
+             Console.WriteLine("ENTER THE VEGTABLE FLAVOUR YOU WANT IN YOUR PIZZA");
+             Console.WriteLine("THE AVAILABLE OPTIONS ARE: 'CAPSICUM', 'ONION', 'GREEN-PEPPERS AND ONION', 'RED-PEPPERS AND ONION', 'MUSHROOMS', 'ONION AND CAPSICUM'");
+                    string veggies = Console.ReadLine();
+                    switch(veggies)
+                    {
+                        case "CAPSICUM":
+                            Console.WriteLine("CAPSICUM IS SELECTED");
+                            Console.WriteLine("Kindly wait 15-20 Minutes for your Pizza to get ready");
+                            break;
+                        case "ONION":
+                            Console.WriteLine("ONION is SELECTED");
+                            break;
+                        case "GREEN-PEPPERS AND ONION":
+                            Console.WriteLine("'GREEN-PEPPERS & ONION' IS SELECTED");
+                            break;
+                        case "RED-PEPPERS AND ONION":
+                            Console.WriteLine("'GREEN-PEPPERS & ONION' IS SELECTED");
+                            break;
+                        case "MUSHROOMS":
+                            Console.WriteLine("'MUSHROOMS' IS SELECTED");
+                            break;
+                        case "ONION AND CAPSICUM":
+                            Console.WriteLine("'ONION AND CAPSICUM' IS SELECTED");
+                            break;
+                        default:
+                            Console.WriteLine("THE AVAILABLE FLAVOUR IS NOT AVAILABLE");
+                            Console.WriteLine("We are really sorry at the moment");
+                            break;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("THE ENTERED FLAVOUR IS NOT AVAILABLE");
+                    Console.WriteLine("We are really sorry at the moment");
+                    break;
+            }
+
+LOOPS
+Loops are a block of code which user uses when the user wants to get the result printed in a repetitive manner. There are 4 types of loops in C# : for, while, do-while and foreach.
+FOR ALL THE LOOPS, THE MOST IMPORTANT THING TO BE KEPT IN MIND IS THAT FOR for and while LOOP, AT FIRST THE CONDITION IS CHECKED, IF IT IS TRUE, THEN ONLY THE LOOP BODY 
+TERMINATES, ELSE IT WILL NOT.
+i.) FOR LOOP
+There are three words for the word loop: Looping, repition and iteration. In C#, every loop has a condition. However, if there is no condition specified, 
+then the loop will be executed infinite times and thus it will be known as infinite loop. 
+There are three things in a for loop -> Initialization, Condition, Increment/ Decrement(It always returns a boolean).
+A Basic for loop representation is like this :
+            /* A Table created using the For Loop */
+	    Console.WriteLine("Enter a Number");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i <= Number; i++) /* This i is called counter variable */
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadLine();
+Now, a table of a number can be created using a For loop is like this:
+	    Console.WriteLine("Enter the Number whose Table you want to be printed");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(Number + " X " + i + " = " + Number * i);
+            }
+ii.) WHILE LOOP
+A Basic while loop looks like this:
+	    int i = 0;
+	    while(i <= 10)
+            {
+                Console.WriteLine(i);
+                i++;
+            }    
+Now a Simple programme for the Table is like this: 
+            Console.WriteLine("Enter the Number whose table is to be printed");
+            int Number = Convert.ToInt32(Console.ReadLine());
+
+            int i = 1;
+
+            while(i <= 10)
+            {
+                Console.WriteLine(Number + " X " + i + " = " + Number*i);
+                i++;
+            }    
+
+iii.) DO-WHILE LOOP
+IN THE DO-WHILE LOOP, FOR THE FIRST TIME, THE CONDITION IS NOT CHECKED, THE LOOP TERMINATES WITHOUT THE CONDITION CHECK FOR THE FIRST TIME. THE DO-WHILE LOOP IS THE 
+LOOP WHICH EXECUTES THE CONDITION FOR THE FIRST TIME, AND THEN THE CONDITION IS CHECKED. NOW IF THE CONDITION IS FALSE FOR NEXT ITERATION, THEN THE LOOP WILL NOT EXECUTE AGAIN.
+A simple example of working do-while loop is:
+ 	   int i = 1;
+	   do
+           {
+                Console.WriteLine(i);
+                i++;
+            }
+            while (i < 0);
+            Console.WriteLine("Works");
+
+A Basic Table programme to Print a Table using do-while loop is :
+	    Console.WriteLine("Enter the Number whose Table is to be printed");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            
+            int i = 1;
+
+            do
+            {
+                Console.WriteLine(Number + " X " + i + " = " + Number*i);
+                i++;
+            }
+            while (i <= 10);
+
+NESTED FOR LOOPS
+	    for (int i = 1; i <= 3; i++)
+            {
+                Console.WriteLine("hello");
+                for (int j = 1; j <= 3; j++)
+                {
+                    Console.WriteLine("Hey");
+                }
+            }
+
+This is a typicale example of nested for loop. For the outer loop, when the condition is true for once, then it enters the inner loop and runs three times and after 
+condition gets false it moves back to the outer loop and again the condition gets true and thus again it gets into the inner loop and prints the result of iner loop 
+thrice and it works again until both the loops of outer and inner gets fail.
+OUTPUT: 
+hello
+Hey
+Hey
+Hey
+hello
+Hey
+Hey
+Hey
+hello
+Hey
+Hey
+Hey
+
+JUMP STATEMENTS - BREAK AND CONTINUE
+Jump statements are used to transfer control from one point in a programme to another. There are four types of Jump statements in C#: break, control, goto and return.
+i.) BREAK
+ 	    for (int i = 1; i <= 10; i++)
+            {
+                
+                if(i == 5)
+                {
+                    break;
+                }
+                Console.WriteLine(i);
+            }
+
+A simple break statement working. Here the result is: 1, 2, 3, 4 and then loop terminates
+The working off the break statement is like this that if the required condition meets with the result, then break the loop and get out of it.
+
+ii.) CONTINUE
+	    for (int i = 1; i <= 10; i++)
+            {
+                
+                if(i == 5)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
+            }
+The continue keyword will skip the current iteration and will move towards the next Iteration. Thus the result will be 1, 2, 3, 4, 6, 7, 8, 9, 10
+Suppose we got a condition and we want the result of its reverse condition, thus we use the condition and then use continue word. continue will always give the reverse
+result.
+	    for (int i = 1; i <= 100; i++)
+            {
+                
+                if(i % 2 == 0)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
+            }	
+THIS WILL GIVE ALL ODD NUMBERS AND THE SAME LOGIC IS USED FOR EVEN NUMBERS AND SO ON.
+
+ARRAYS
+Array is a collection of related values placed in contiguous(adjacent) memory locations and these values are referenced using a common array name. Array is a collection of a
+single data type strored in adjacent memory locations.
+There are multiple ways in
+which an array can be declared -
+i.)         int[] my_array = new int[3]; /* This new keyword's job is to allocate the memory to the USER in RAM */
+            my_array[0] = 11;
+            my_array[1] = 22;
+            my_array[2] = 33;
+
+            Console.WriteLine(my_array[0]);
+
+ii.) string[] my_array = new string[3];
+            my_array[0] = "A";
+            my_array[1] = "B";
+            my_array[2] = "C";
+
+iii.) string[] my_array = new string[] {"A", "B", "C"};
+      
+iv.) string[] my_array = { "A", "B", "C" };
+
+Similarly user can make the array of any data type as per the need, like float, double, bigint and so on. Array indexes are also called array subscripts that determine
+the position of the elements in an array list. Negative index values of an array are not supported in C#.
+
+TO KNOW THE LENGTH OR SIZE OF AN ARRAY 
+Console.WriteLine(array_name.Length);
+
+FUNCTION NAME, OR CLASS NAME OR VARIABLE NAME OR ARRAY NAME IS CALLED IDENTIFIER. WHEN THE USER DECLARES THE ARRAY, THEN THERE IS NO MEMORY ALLOCATED, BUT THE MEMORY 
+IS ALLOCATED WHEN THE USER EXECUTES THE PROGRAMME OF THE ARRAY.
+
+ACCESSING ARRAY USING FOREACH LOOP
+The foreach loop is used with the variables that have the multiple values, like array, list collection, large data collections and so on. The foreach loop is 
+an extended version of for loop.
+Now accessing the array using the FOR LOOP
+Now the Syntax to access the array using FOR loop is ->
+
+`           int[] numbers = new int[4];
+            numbers[0] = 10; numbers[1] = 20; numbers[2] = 30; numbers[3] = 40;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine(numbers[i]);
+            }
+
+            Console.ReadLine();
+
+TO GET THE FOR LOOP STATEMENT, USER CAN TYPE for tab+tab(twice tab)
+THE SIMILAR IS THE CASE WITH STRING TYPES ARRAY
+	    string[] names = new string[4];
+            names[0] = "10"; names[1] = "20"; names[2] = "30"; names[3] = "40";
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine(names[i]);
+            }
+
+            Console.ReadLine();
+FOREACH LOOP WORKING
+	    string[] names = new string[4];
+            names[0] = "10"; names[1] = "20"; names[2] = "30"; names[3] = "40";
+            foreach(string name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            Console.ReadLine();
+
+TYPES OF ARRAYS
+There are two categories of array's, based on how they store elements: 
+i.) Single Dimensional Arrays.
+ii.)Multi Dimensional Arrays.
+
+MULTIDIMENSIONAL ARRAYS
+A multidimensional array allows you to store the combination of values of a single type into two or more dimensions. The dimensions of the array are represented as rows 
+and columns similar to the rows and columns like a Microsoft Excel Sheet. IT IS ALSO CALLED ARRAY OF ARRAYS. There are two types of multi-dimensional array:
+Rectangular Array and Jagged Array.
+TO INITIALISE OR CREATE A MULTI-DIMENSIONAL ARRAY : 
+int[,] my_array = new int[3, 4];
+Here 3 = No. of Rows, 4 = No. of columns
+
+Now the syntax to write the multi-dimensional array is :
+	    int[,] my_array = new int[3, 4]
+            {
+                             /* 0,  1,  2,  3 */
+                /*Index = 0*/ {12, 13, 14, 15},
+                /*Index = 1*/ {16, 17, 18, 19},
+                /*Index = 2*/ {20, 21, 22, 23}
+            };
+Console.WriteLine(my_array[1, 3]); /* In this way, we can access any element from the array */
+
+Now to get the length of the arrays across rows and columns, the method used is getLength method.
+For a 2D array, the piece of code used is -
+Console.WriteLine(my_array.GetLength(0)); /* This will give the value of the first dimension */
+Console.WriteLine(my_array.GetLength(1)); /* This will give the value of the second dimension */
+
+TO GET THE DIMENSION OF THE ARRAY, 
+ Console.WriteLine(my_array.Rank);
+A RECTANGULAR ARRAY SHOULD HAVE A FIXED SIZE ACROSS BOTH THE ROWS AND COLUMNS.
+
+TO GET ALL THE ELEMENTS OF THE ARRAY
+	    int[,] my_array = new int[3, 4]
+            {
+                             /* 0,  1,  2,  3 */
+                /*Index = 0*/ {12, 13, 14, 15},
+                /*Index = 1*/ {16, 17, 18, 19},
+                /*Index = 2*/ {20, 21, 22, 23}
+            };
+
+            for(int i = 0; i < my_array.GetLength(0); i++)
+            {
+                for (int j = 0; j < my_array.GetLength(1); j++)
+                {
+                    Console.WriteLine(my_array[i, j] + " ");
+                }
+            }
+
+TO GET ALL THE ELEMENTS IN A MATRIX FORM
+	    int[,] my_array = new int[3, 4]
+            {
+                             /* 0,  1,  2,  3 */
+                /*Index = 0*/ {12, 13, 14, 15},
+                /*Index = 1*/ {16, 17, 18, 19},
+                /*Index = 2*/ {20, 21, 22, 23}
+            };
+
+            for(int i = 0; i < my_array.GetLength(0); i++)
+            {
+                for (int j = 0; j < my_array.GetLength(1); j++)
+                {
+                    Console.Write(my_array[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            
+ACCESSING THE ARRAY USING THE FOREACH LOOP
+Accessing the Rectangular array using the foreach loop is very simple and convinient to use. The foreach loop does is that it converts the 2D array into the 1D array
+and then it displays the result. Thus the code syntax to access the elements of the array using the foreach loop is :
+            int[,] my_array = new int[3, 4]
+            {
+                             /* 0,  1,  2,  3 */
+                /*Index = 0*/ {12, 13, 14, 15},
+                /*Index = 1*/ {16, 17, 18, 19},
+                /*Index = 2*/ {20, 21, 22, 23}
+            };
+
+            foreach(int item in my_array)
+            {
+                Console.Write(item);
+            }
+
+JAGGED ARRAY
+SYNTAX OF JAGGED ARRAY:
+
+	    int[][] my_array1 = new int[3][];
+            my_array1[0] = new[] {11, 22, 33, 44, 47, 58, 99, 74, 55};
+            my_array1[1] = new[] {55, 66, 77, 88, 15, 63, 45};
+            my_array1[2] = new[] {85, 87, 89, 99, 44};
+
+ACCESSING THE VALUES OF JAGGED ARRAY USING THE FOR LOOP
+
+	   int[][] my_array1 = new int[3][];
+            my_array1[0] = new[] {11, 22, 33, 44, 47, 58, 99, 74, 55};
+            my_array1[1] = new[] {55, 66, 77, 88, 15, 63, 45};
+            my_array1[2] = new[] {85, 87, 89, 99, 44};
+
+            for (int i = 0; i < my_array1.GetLength(0); i++)
+            {
+                for (int j = 0; j < my_array1[i].Length; j++)
+                {
+                    Console.Write(my_array1[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+ACCESSING THE JAGGED ARRAY USING THE FOREACH LOOP
+	    int[][] my_array1 = new int[3][];
+            my_array1[0] = new[] {11, 22, 33, 44, 47, 58, 99, 74, 55};
+            my_array1[1] = new[] {55, 66, 77, 88, 15, 63, 45};
+            my_array1[2] = new[] {85, 87, 89, 99, 44};
+
+            foreach (int[] item1 in my_array1)
+            {
+                foreach (var item2 in item1)
+                {
+                    Console.Write(item2 + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+INITIALISE ARRAY WITH USER INPUT
+	    Console.WriteLine("Enter the size of the Array");
+            int size = int.Parse(Console.ReadLine());
+            int[] numbers = new int[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine("Enter the Elements to be stored in the Array");
+                int data = int.Parse(Console.ReadLine());
+                numbers[i] = data;
+            }
+
+            Console.WriteLine("The Resulted Array is: ");
+            foreach(int number in numbers)
+            {
+                Console.WriteLine(number);
+               
+            }
+
+            Console.ReadLine();
+
+ Console.WriteLine("Enter the Elements to be stored in the Array" + i);
+ Console.WriteLine("Enter the Elements to be stored in the Array" + (i+1));
+
+METHODS OR FUNCTIONS 
+The Method or function can be defined as :-
+i.) A method is a group of statements that together perform a task. Methods are functions declared in a class and may be used to perform operations on class variables.
+ii.) The functions are a block of code that may or may not accept the parameters and may or may not return a value.
+iii.) The functions are used to perform the specific task and are reusable.
+iv.) EVERY C# PROGRAMME HAS AT LEAST ONE CLASS WITH A METHOD NAME "Main"
+
+
+DECLARING A METHOD
+To declare a method, create a class and there we write our class code, e.g. SeasonOne.cs is the class name
+class SeasonOne
+    {
+        /* Declaring a Method */
+        public void methodOne()
+        {
+            int a = 12; int b = 13;
+            int c = a + b;
+            Console.WriteLine("The result of this calculation is " + c);
+        }
+    }
+
+THIS CUSTOM CREATED METHOD IS ALSO KNOWN AS NON-STATIC METHOD OR INSTANCE METHOD BECAUSE IT IS NOT USING "STATIC" KEYWORD
+
+CALLING THE METHOD
+The method created in any class of the application will be called only inside the main method. Thus the code for this process will be in the Program.cs file :
+
+        {
+            SeasonOne season = new SeasonOne();
+            season.methodOne();
+
+
+            Console.ReadLine();
+        }
+
+SeasonOne is the class name, season is the local variable, new word allocates the memory in ram, SeasonOne() is called Constructor, methodOne() is the signature.
+Now the method may or may not accept the parameters, and are known as parametrized or non-parametrized methods.
+
+STATIC AND NON-STATIC(INSTANCE) METHODS
+i.) Example of Non-static Method
+	public void methodOne()
+        {
+            int a = 12; int b = 13;
+            int c = a + b;
+            Console.WriteLine("The result of this calculation is " + c);
+        }
+
+ii.) Example of Static Method
+	public static void staticMethod()
+        {
+            int a = 12; int b = 13;
+            int c = a + b;
+            Console.WriteLine("The result of this calculation is " + c);
+        }
+
+NOW THE DIFFERENCE IN CALLING THESE METHODS :
+i.) CALLING A NON-STAIC METHOD
+In the Main file, we call a non-static method like this:
+	    SeasonOne season = new SeasonOne();
+            season.methodOne();
+
+ii.) CALLING A STAIC METHOD
+In the Main file, we call a non-static method like this:
+	     SeasonOne.staticMethod();
+We call a static method by using the class Name
+
+CREATING A PARAMETERIZED METHODS
+In SeasonOne.cs file, we create a method like this :
+	public static void calculation(int num1, int num2)
+        {
+            int result = num1 + num2;
+            Console.WriteLine(result);
+        }
+
+CALLING THE PARAMETRIZED METHOD
+In the Main.cs file, we call a Parametrized method like this :
+	SeasonOne.calculation(12, 13);
+
+GETTING VALUES FROM THE USER
+Now, we come in a case where we want to get the values from the USER, thus in the Main.cs file, where we call the method, we have to ask for the values from the USER
+like this :
+	    Console.WriteLine("Enter the first Number");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the Second Number");
+            int num2 = int.Parse(Console.ReadLine());
+
+            SeasonOne.calculation(num1, num2);
+
+NAMED ARGUMENTS IN FUNCTIONS
+Consider a case of a function,
+	public static void showName_Age(string name, int age)
+        {
+            Console.WriteLine("Your Name is: " + name);
+            Console.WriteLine("Your Age is: " + age);
+
+        }
+
+Now in Main.cs class, we call the fuction, like this: SeasonOne.showName_Age("Ankur", 23);
+BUT THE THING IS THAT IF WE INTERCHANGE THE VALUES OF THE ARGUMENTS, THEN THERE WILL BE AN ERROR IN THE FUNCTION. THUS HERE THE NAMED VARIABLES COME INTO PLAY.
+USING THE NAMED VARIABLE, USER CAN INTERCHANGE THE VALUES OF THE ARGUMENTS LIKE THIS : SeasonOne.showName_Age(name: "Ankur", age: 23);
+
+RETURN TYPES IN FUNCTIONS
+A method or a function in C# may or may not return a value. Thus the meaning of this line can be explained like this: 
+The word void is used when the function does not has to return anything, but when the USER needs the values to be returned from the function, then void keyword
+is not used, Instead we use the type of data to be returned(int, string, float etc.)
+	public static int addition(int num1, int num2)
+        {
+            int result = num1 + num2;
+              return result; 
+        }
+
+Now we need to call this function in the Main.cs file, thus we call the class like this :
+	Console.WriteLine(SeasonOne.addition(13, 14));
+
+Sometimes there is a case where you don't need to get the value of any function to be printed, Instead we just need to get the value returned, thus we use the return 
+keyword in the functions. Now the use of return is to get the values stored into any variable and then to be used in some other variable or the variable to be printed,
+like this:
+ 	public static int addition(int num1, int num2)
+        {
+            int result = num1 + num2;
+              return result; 
+        }
+
+Now in Main.cs file, int a = SeasonOne.addition(20, 30);
+Now we can either use this variable 'a', or we can print the value of this variable.
+
+ANALOGY OF A C# FUNCTION
+Consider an example of a function:
+public int max(int x, int y)
+{
+   if(x > y)
+     return x;
+   else 
+     return y;
+}
+Now let us understand the entire terminology of the function,
+public: ACCESS MODIFIER, int: RETURN TYPE, max: METHOD NAME, int x, int y: PARAMETERS, {Code inside}: FUNCTION BODY OR BODY OF THE METHOD
+
+NAMING CONVENTIONS FOR METHODS OR FUNCTIONS
+While creating methods or functions, there are a few set of rules that are to be followed, such as:
+i.) A function name cannot start with a digit, e.g. 9addValues() {} is an in-valid method name.
+ii.) A function however can begin with an _underscore, letter, or @ character.
+iii.) A function cannot have spaces in its name, however, if you want to create a seperation in the name, then you can use _underscore. 
+e.g. add_Numbers() {} is a valid function name. 
+
+INVOKING OR CALLING THE METHODS
+The term Invoking or calling a method is defined as calling a method.There are two types of methods(static and non-static(instance)). The instance methods are invoked 
+by creating an object of the method, while the static methods are called only by their class name.
+In C#, a method is always invoked from another method. The Main method is called calling method while the method called inside the Main method is known as called Method
+The methods are stored in RAM, where there are two portions, stack and heap. The custom created method is stored in the Stack.
+
+PARAMETERS AND ARGUMENTS
+The values which are passed in the head or parenthesis of the function are called parameters. e.g.
+function-name(parameter1, parameter2) 
+{
+	This is a method;
+}
+
+and the values which are passed while calling a function to satisfy the values of the parameters are known as arguments. 
+e.g.- className.function-name(value-1, value-2);
+value-1 and value-2 are the arguments.
+
+VALUE TYPE AND REFERENCE TYPE
+The data types in C# are divided into two main categories: Value Type and Reference Type. 
+To understand this concept, at first we need to understand two concepts: STRUCT and CLASS.
+CLASS: We use class to create a record of any(say students), thus rather than creating different variables associated with the student(like Roll_No, Name, Address),
+we can put them all in class and when we create the object, thus the object will have all the variables. We can perform the same task with STRUCT, but the difference 
+is STRUCT is VALUE TYPE, and CLASS is REFERENCE TYPE.
+VALUE-TYPE(CLASS) IS STORED IN STACK MEMORY, WHILE REFERENCE-TYPE(STRUCT) IS STORED IN HEAP MEMORY. HEAP HAS MORE STORAGE CAPACITY AS COMPARED TO STACK, STACK HAS COMPARATIVELY LESS 
+MEMORY.
+NOW CONSIDER AN EXAMPLE OF STRUCT, OR REFERENCE-TYPE
+	struct Employee
+        {
+            public int Salary;
+            public int Age;
+        }
+We create a Struct in the class, and now we create the object of the struct in the Main.cs class, 
+ 	    Employee e = new Employee();
+            e.Age = 23;
+            e.Salary = 5000;
+Now this 'e' only holds an address and not the value
+Now we again create two more constructs, and where we store the same object 'e', and then we print the value:
+	    Employee e1 = e;
+            Employee e2 = e;
+            e.Age = 25;
+	    Console.WriteLine(e.Age);
+            Console.WriteLine(e1.Age);
+            Console.WriteLine(e2.Age);
+Now, when we print the values of both e1.Age and e2.Age, thus the result will be 23 while for e.Age, the result will be 25 and that is the drawback of Reference Type, 
+here we have to change the values individually one by one for all the references which we declare to get the same output throughout the cycle.
+NOW the explanation to this is that all three objects: e, e1 and e2 should have same and single alloted memory, but they are getting three different memories stored
+and thus the stack is getting filled faster, thus there occurs an exception, known as Stack-Overflow(There is also a very famous website of this Name).
+
+EXPLANATION AND EXAMPLE OF VALUE-TYPE(CLASS)
+	class Employee
+        {
+            public int Salary;
+            public int Age;
+        }
+
+Now we create a class as mentioned above, Now we create the object of the class:
+ 	    Employee e = new Employee();
+            e.Age = 25;
+            e.Salary = 5000;
+and finally, we store the values in the variables:
+	    Employee e1 = e;
+            Employee e2 = e;
+            e.Age = 28;
+            Console.WriteLine(e.Age);
+            Console.WriteLine(e1.Age);
+            Console.WriteLine(e2.Age);
+
+THUS THE RESULT WILL BE 28 FOR ALL THE OBJECTS, i.e. e, e1 and e2.
+Now the explaining of this process is: Employee e(Reference Variables) will be made in the Stack, while the object(new Employee()) will be made in the Heap.
+Now for the class, the Reference variable(stored in Stack) will have an address(say like 0*3453) and the object(stored in Heap) will also have a same address(0*3453)
+Now this address is known as Reference. Value type will be allocated memory at compile time, while reference type gets the memory allocated at run time
+
+PASS-BY-VALUE AND PASS-BY-REFERENCE
+Consider we create a method:
+	public static void passByValue(int num)
+        {
+            num = num + 10;
+            Console.WriteLine(num);
+        }
+and Now we call the method in the Main.cs class:
+	    int value = 5;
+            SeasonOne.passByValue(value);
+            Console.WriteLine("The result is : " + value);
+Now the result will be 15 and 5 for the variable value. This happens because the memory block of both the methods are different, and thus for each of the different 
+memory block, the values taken will be different.
+
+PASS-BY-REFERENCE
+When we declare and initialize a variable with a value, two things occur, there is a memory block created and also there is an address of the memory block. This address
+is known as Reference. now in the Pass-By-Reference, we don't just give a copy to the method, instead we give the complete reference to the method as argument.
+Thus unlike Pass-By-Value, we will not get different values, instead we will get the same values.
+Consider a method in a custom class:
+	public static void passByReference(ref int num)
+        {
+            num = num + 10;
+            Console.WriteLine(num);
+        }
+
+Now we invoke this method in the Main.cs class:
+	    int value = 5;
+            SeasonOne.passByReference(ref value);
+            Console.WriteLine("The result is : " + value);
+
+and now when we print the lines, we will get the same result.
+
+
+PASS-BY-OUT 
+
+
+
+VAR AND DYNAMIC KEYWORD
+The var Keyword
+i.) var was introduced in C# 3.0, It is used to store any type of data in its variable.
+ii.) The value of var variable is decided at the compile time. We have to initilaize the var keyword with the VAR keyword. The benefit of this feature is that once the
+type of variable is defined, thus now it will posses all the features of that variable. e.g. 
+In Main.cs file, we declare a var keyword:
+ 	    var a = "Ankur";
+            Console.WriteLine(a.Length);
+Similarly just like length, it will have all the properties of the string, like ToUpper() and so on.
+	    var a = "Ankur";
+            Console.WriteLine(a.ToUpper());
+
+iii.) AN IMPORTANT NOTE, IF WE WANT TO KNOW THE var VARIABLE TYPE, THUS THERE IS A METHOD KNOWN AS GetType(), 
+e.g. :      var a = "Ankur";
+            Console.WriteLine(a.GetType());
+
+It will return the result like this: System.String
+
+iv.) When we Initialize the 'var' variable with some value(data type), then we cannot change the value of 'var' variable with some other data type.
+v.) The benefit of var keyword is that the Code Editor gives the previliage of IntelliSense as the value of var keyword is defined at the compile time.
+vi.) var keywords cannot be used to for property or return values from a function. These var can be used as local variable in a function.
+e.g. 	public static var Show()
+        {
+            return 0;
+        }
+THIS TYPE OF FUNCTION IS NOT ALLOWD WITH var variable, SIMILARLY show(var a, var b) is also not allowed
+vii.) The var keyword is of Value-Type and not the Reference-Type
+
+DYNAMIC KEYWORD
+i.) The Dynamic Keyword was introduced in C# 4.0. Just like var keyword the Dynamic keyword is also used to store any type of data.
+However, the key difference is unlike the var keyword, the value of Dynamic keyword is decided at Run time, and initialization of dynamic keyword is not mendatory.
+e.g. 	    dynamic a;
+            a = 10;
+            Console.WriteLine(a);
+            Console.WriteLine(a.GetType()); /* This line executes when the code runs, i.e. Run time */
+ii.) AN IMPORTANT NOTE TO BE KEPT IN MIND IS THAT, IN var keyword, we cannot change the value of the variable once defined, but in the dynamic keyword, it is not the case,
+here we can change the value of the variable in the next line, i.e.
+	    dynamic a = 10;
+            a = "Ankur";
+            Console.WriteLine(a);
+Changing the value of a is possible with the dynamic keyword.
+
+iii.) However, with the dynamic keyword, there is an issue with the intellisense support, i.e. Console.WriteLine(a.GetType()); HERE we will have to type GetType() 
+manually as the compiler doesn't know about the variable or the value data type as the variable type is decided at the run time.
+iv.) dynamic variables can be used to create properties and return values from a function.
+e.g. We create a function in a custom class:
+	public static dynamic addition(dynamic a, dynamic b)
+        {
+            dynamic c = a + b;
+            return c;
+        }
+Now we call the method in Main.cs class,
+	    dynamic d = SeasonOne.addition(12, 13);
+            Console.WriteLine(d);
+Now we can call this function as many times as we want, like this:
+	    Console.WriteLine(d);
+            dynamic e = SeasonOne.addition(12.45, 13.26);
+            Console.WriteLine(e);
+            dynamic f = SeasonOne.addition(" Ankur ", " Goswami ");
+            Console.WriteLine(f);
+AND IT WILL GIVE THE DIFFERENT VALUES EVERYTIME WE CALL AND PASS THE DIFFERENT ARGUMENTS AS VALUE TYPES ARE DECIDED AT RUN TIME
+
+
+v.) DYNAMIC KEYWORD IS OF REFERENCE-TYPE.
+
+CLASSES AND OBJECTS
+i.) C# programs are composed of classes that represent the entities(Objects) of the program which also include code to instantiate the classes as objects.
+ii.) classes and objects are of reference types.
+iii.) An object is a tangible entity(solid or thos) like car, briefcase, table and so on. Every object has some characterstics and is capable of 
+performing certain actions.(like number of wheels of car, its colour, its seating capacity, its engine type(like petrol or diesel) all these are known as the
+characterstics or variables(in terms of programming language) and car's speed, its milage, are its methods(in terms of programming language) or behaviour).
+iv.) For example, an object of a car can have multiple features like car's company name, model, price, milage and so on.
+v.) An object stores its identity and state in fields(also known as variables) and exposes its behaviour through methods.
+
+A Typical Classes and objects concept can be understood using this:
+using System;
+
+namespace Legacies
+{
+    class Student
+    {
+        int student_rollno;
+        string student_Name;
+        string student_Age;
+        int Student_standard;
+
+        public void setStudents(int roll_no, string name, string age, int standard)
+        {
+            roll_no = this.student_rollno;
+            name = this.student_Name;
+            age = this.student_Age;
+            standard = this.Student_standard;
+        }
+        public void getStudents()
+        {
+            Console.WriteLine("The Roll No is : " + student_rollno);
+            Console.WriteLine("The Name is : " + student_Name);
+            Console.WriteLine("The Age is : " + student_Age);
+            Console.WriteLine("The Standard is : " + Student_standard);
+        }
+
+        
+        static void Main(string[] args)
+        {
+            Student obj = new Student();
+            obj.student_rollno = 001;
+            obj.student_Name = "Ankur Goswami";
+            obj.student_Age = "7 Years";
+            obj.Student_standard = 5;
+
+            obj.getStudents();
+            
+
+            Console.ReadLine();
+        }
+    }
+}
+
+
+CONSTRUCTOR IN C#
+A class constructor is a special member function of a class which is executed whenever we create new objects of that class. A class constructor 
+has exactly the same name as that of a class and doesn't has any return type. There are two types of construcotrs: Default and Parameterized Constructor
+
+DEFAULT CONSTRUCTOR
+A constructor which has not defined any parameters or we can say without any parameters is called default construcotr. It initializes the same value of every instance
+of class.
+A simple default constructor can be made like this: 
+In a class, we simply define a constructor: 
+	public SeasonOne()
+        {
+            Console.WriteLine("This is a constructor");
+        }
+
+Now to call this default constructor, all we need to do is make the object of this class and the constructor will be called:
+SeasonOne season = new SeasonOne();
+Now here we have added a constructor by ourselves. If however, we don't create any constructor, then C# compiler will automatically add a compiler for us but it won't 
+be able to perform anything as it will be empty.
+
+
+PARAMETERIZED CONSTRUCTOR
+A constructor which has atleast one parameter. Using this type of constructor, we can initialize each instance of a class to different values. Now we can use the
+parameterized constructor to call all the Details(say of an Employee). For this we create a class and we add the methods to execute:
+class SeasonOne
+    {
+        int EmpId;
+        string EmpName;
+        int EmpAge;
+
+        public SeasonOne(int EId, string EName, int EAge)
+        {
+            this.EmpId = EId;
+            this.EmpName = EName;
+            this.EmpAge = EAge;
+        }
+
+        public int getId()
+        {
+            return this.EmpId;
+        }
+
+        public int getAge()
+        {
+            return this.EmpAge;
+        }
+
+        public string getName()
+        {
+            return this.EmpName;
+        }
+
+    }
+
+Now in The Main.cs class, we call these constructor like this:
+	static void Main(string[] args)
+        {
+            SeasonOne Ankur = new SeasonOne(EId: 1, EName: "Ankur", EAge: 23);
+            SeasonOne Ayush = new SeasonOne(EId: 2, EName: "Ayush", EAge: 24);
+
+            Console.WriteLine(Ankur.getId());
+            Console.WriteLine(Ankur.getName());
+            Console.WriteLine(Ankur.getAge());
+
+            Console.ReadLine();
+        }
+
+CONSTRUCTOR OVERLOADING
+As we learned about the constructors, now we going to discuss about constructors overloading. As we know the constructors are made up of class names. 
+Now when we try to create multiple constructors, this is known as constructors overloading. However in C#, we can add multiple constructors by the same name, but 
+the thing is that we should provide different arguments to each of the constructors. Consider an example in a class, where we add multiple constructors:
+    class SeasonOne
+    {
+        public SeasonOne()
+        {
+            Console.WriteLine("This is a first constructor");
+        }
+
+        public SeasonOne(int a, int b)
+        {
+            Console.WriteLine("This is second Constructor " +  (a + b));
+        }
+        public SeasonOne(int a, int b, int c)
+        {
+            Console.WriteLine("This is Third Constructor" +  (a + b + c));
+        }
+    }
+
+Now in the Main.cs class, we can call these constructors but with different arguments, like this:
+	static void Main(string[] args)
+        {
+            SeasonOne season = new SeasonOne();
+            SeasonOne season1 = new SeasonOne(12, 13);
+            SeasonOne season2 = new SeasonOne(12, 13, 14);
+
+            Console.ReadLine();
+        }
+
+STATIC AND INSTANCE MEMBERS OF A CLASS....... DESTRUCTORS IN C#
+
+INHERITANCE
+The similarity in physical features of a child to that of its parents is due to the child having inherited these features from its parents. Similarly in C#, 
+inheritance allows you to create a class by deriving the common attributes and methods of an existing class. Inheritance provides reusability by allowing us 
+to extend an existing class. Now a working example of this process can be explained as:
+We create a class, say of Name Employee.cs and we place the required elements:
+    class Employee
+    {
+        public int EmpId;
+        public string EmpName;
+        public int EmpAge;
+        public int ContactNo;
+    }
+
+    class VisitingEmployees : Employee
+    {
+        public int visit_working_Hours;
+        public int visiting_salary;
+
+    }
+
+    class PermanentEmployees : Employee
+    {
+        public string permanent_working_Hours;
+        public int permanent_salary;
+    }
+
+And Now in Main.cs class, we call these methods by setting their values
+	public static void Main(string[] args)
+        {
+            PermanentEmployees pEmp = new PermanentEmployees();
+            pEmp.EmpId = 001;
+            pEmp.ContactNo = 232456;
+            pEmp.ContactNo = 23;
+            pEmp.EmpName = "Ankur Goswami";
+            pEmp.permanent_working_Hours = "8 Hours";
+            pEmp.permanent_salary = 18000;
+
+            Console.WriteLine(pEmp.EmpId);
+	    Console.WriteLine(pEmp.EmpName);
+            Console.WriteLine(pEmp.ContactNo);
+
+            Console.ReadLine();
+        }
+
+Thus we are accessing the properties of the other class into our required class by using Inheritance. Now by using Inheritance, we can also define a method in any of 
+our class and we can simply call the method, like this:
+In our Employee.cs class, we can define a method:
+class Employee
+    {
+        public int EmpId;
+        public string EmpName;
+        public int EmpAge;
+        public int ContactNo;
+        public void show()
+        {
+            Console.WriteLine("This is a method of base class");
+        }
+    }
+and Now in the Main.cs file, we can call this method, like this:
+PermanentEmployees pEmp = new PermanentEmployees();
+pEmp.show();
+
+TYPES OF INHERITANCE
+We have discussed the basics of inheritance. Now we are going to discuss about types of Inheritance. There are four types of inheritance in C#: Single, hierarchial,
+Multi-level, Multiple(using interface).
+i.) SINGLE INHERITANCE : It is the type of inheritance in which there is only one base class(parent class) and only one derived class(child class).
+    class BaseClass
+    { 
+        public void baseData()
+        {
+            Console.WriteLine("This is the Method of Base Class");
+        }
+    }
+
+    class DerivedClass : BaseClass
+    {
+        public void derivedData()
+        {
+            Console.WriteLine("This is derived class and it is Inheriting data from base class");
+        }
+    }
+
+Now in Main.cs class, we make the object of derived class, and thus we can inherit both the methods:
+        public static void Main(string[] args)
+        {
+            DerivedClass der = new DerivedClass();
+            der.derivedData();
+            der.baseData();
+
+            Console.ReadLine();
+
+        }
+
+ii.) HIERARCHIAL INHERITANCE
+This is the type of inheritance in which there are multiple classes derived from one base class. This type of inheritance is used when there is a requirement of one
+class feature that is needed in multiple class.
+
+
+TO BE CONTINUED....
+
+CONSTRUCTOR IN INHERITANCE
+
+ACCESS SPECIFIERS OR ACCESS MODIFIERS IN C#
+We have often seen in our applications that we add the terms public, private, or protected before our variables. Now what do these terms mean. There specific keywords
+are known as access specifiers or access modifiers. Thus, these keywords perform the task to provide the access to the variables. Now, out of all the access modifiers 
+in C#, every access modifiers gives the permission to use the variable in same class where it is defined. The issue arises when we try to access these variables outside
+of the class where it is defined. Access Modifiers allow you to specify that where actually you want to use your variables.
+Now In C#, there are commonly four types of access modifiers: public, private, protected, Internal.
+NOW AN IMPORTANT NOTE, BY-DEFAULT WHEN THERE IS NO ACEESS MODIFIER SPECIFIED, THUS C# AUTOMATICALLY PUTS THE PRIVATE ACCESS MODIFIER.
+i.) PUBLIC: The code is accessible for all classes.
+ii.) PRIVATE: The code is only accessible within the same class.
+iii.) PROTECTED: The code is accessible within the same class, or in a class that is inherited from that class.
+IV.) INTERNAL: The code is only accessible within its own assembly, but not from another assembly.
+SOME OF THE EXAMPLES OF THESE CAN BE EXPLAINED AS:
+i.) PUBLIC EXAMPLE
+class Car
+{
+  public string model = "Mustang";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+THE RESULT WILL BE : Mustang
+
+ii.) PRIVATE
+class Car
+ 
+{
+  private string model = "Mustang";
+
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+THIS WILL NOT GIVE ANY ERROR, THE RESULT WILL BE: Mustang
+
+BUT THIS WILL GIVE AN ERROR:
+class Car
+{
+  private string model = "Mustang";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+
+THIS CODE WILL GIVE AN ERROR, BECAUSE THIS IS THE CASE WITH Private access modifier.
+
+NOW THE CONCEPT REALLY TO UNDERSTAND IS FOR PROTECTED AND INTERNAL
+
+iii.) PROTECTED
+The important points to be kept in mind for the protected access modifiers are as such:
+i.) It is not applicable to the application. It means, the class which contains the protected member, thus the protected variable wil not be used outside of that class
+or other class.
+For e.g., we create a class like this:
+    public class AccessModifiers
+    {
+        protected void show1()
+        {
+            Console.WriteLine("This is a protected method");
+        }
+    }
+and now we call the method in our Main.cs class
+        public static void Main(string[] args)
+        {
+            AccessModifiers access = new AccessModifiers();
+            access. => HERE IT WILL SHOW AN ERROR AND THE show1() method will not be accessed here
+
+            Console.ReadLine();
+        }
+
+ii.) It is however applicable to the current class. e.g.
+    class Program
+    {
+        protected void show1()
+        {
+            Console.WriteLine("This is a protected method");
+        }
+
+        public static void Main(string[] args)
+        {
+            Program access = new Program();
+            access.show1();
+
+            Console.ReadLine();
+        }
+    }
+
+iii.)It is also applicable to the child class(derived class).It means that we can access the protected method of the base class into the child class. e.g.
+    public class AccessModifiers_One
+    {
+        protected void show1()
+        {
+            Console.WriteLine("This is a protected method of the base class");
+        }
+    }
+    
+    class Program : AccessModifiers_One
+    {
+        public static void Main(string[] args)
+        {
+            Program p1 = new Program();
+            p1.show1();
+            
+            
+
+            Console.ReadLine();
+        }
+    }
+
+iv.) Protected access modifier is not accessible outside the namespace, or in other namespace or assembly. Means that the protected access modifier is not acessible
+in the other namespace.
+v.) It is however accessible outside the namespace but in the derived class.
+
+iv.) INTERNAL 
+The internal access modifier can be explained as:
+i.) The internal access specifier is applicable in the complete application. e.g.
+   public class AccessModifiers_One
+    {
+        internal void show1()
+        {
+            Console.WriteLine("This is a protected method of the base class");
+        }
+    }
+    
+    class Program : AccessModifiers_One
+    {
+        public static void Main(string[] args)
+        {
+            AccessModifiers_One access = new AccessModifiers_One();
+            access.show1();
+            
+
+            Console.ReadLine();
+        }
+    }
+
+ii.) It is applicable to the current class. However for the current class, all the access modifiers are applicable.
+iii.) It is also applicable to the derived class, i.e. We can use the internal access specifier in the child class by inheriting the base class(parent class). e.g
+    public class AccessModifiers_One
+    {
+        internal void show1()
+        {
+            Console.WriteLine("This is a protected method of the base class");
+        }
+    }
+
+    public class AccessModifiers_two : AccessModifiers_One
+    {
+        internal void show2()
+        {
+            Console.WriteLine("Hello!");
+        }
+    }
+
+Now in the Main.cs class, we make the object only of AccessModifiers_two and we can access both the methods show1() and show2() like this:
+        public static void Main(string[] args)
+        {
+            AccessModifiers_two access = new AccessModifiers_two();
+            access.show1();
+            access.show2();
+            
+
+            Console.ReadLine();
+        }
+
+SOME OTHER RULES FOR ACCESS MODIFIERS
+i.) Members of the same class can access each other.
+ii.) Only public and internal are the access modifiers which are applicable to the classes. Now this means that when we are defining a class, we give them the access
+modifier of public, but if by-default we don't put public, thus the classes are internal.
+
+ENCAPSULATION IN C#
+Encapsulation is a Pillar of one of four fundamental OOP concepts.The other three are Inheritance, Polymorphism and abstraction.
+Encapsulation in C# is a mechanism of wrapping data(variables) and code acting on the data(methods or properties) together as a single unit. In encapsulation, the 
+variables of a class will be hidden from other classes, and can be accessed only through the methods or properties of their current class. Therefore it is known as data
+hiding.
+
+First Rule of Encapsulation, We have to make the variables private, and in C#, if we don't add any access modifier, then it is private by-default
+Now In Encapsulation, to access the data, we make methods or properties in the same class where variables are defined.
+NOW CONSIDER AN EXAMPLE OF THE DATA ENTITIES WITHOUT ENCAPSULATION:
+We create a class and then we define the methods in them:
+class Person
+    {
+        string PersonName;
+        int PersonAge;
+
+        public void setName(string Name)
+        {
+            this.PersonName = Name;
+        }
+        public void getName()
+        {
+            Console.WriteLine("The Name of the person is " + this.PersonName);
+        }
+        public void setAge(int Age)
+        {
+            this.PersonAge = Age;
+        }
+        public void getAge()
+        {
+            Console.WriteLine("The Name of the person is " + this.PersonAge);
+        }
+    }
+
+and Now in the Main.cs class, we add these methods:
+    public static void Main(string[] args)
+        {
+            Person p = new Person();
+            p.setName("");
+            p.getName();
+            p.setAge(-23);
+            p.getAge();
+
+            Console.ReadLine();
+        }
+Now the issue is that, if we try to store the Invalid data, it is also allowed to store and thus here the need of Encapsulation comes in. Here in these methods, the
+data entities will be checked first before being stored, i.e. No empty Name and NO Negative age.
+Thus the code as per the Encapsulation logic is: 
+In our Custom class, we create the logic like this:
+class Person
+    {
+        string PersonName;
+        int PersonAge;
+
+        public void setName(string Name)
+        {
+            if(string.IsNullOrEmpty(Name) == true)
+            {
+                Console.WriteLine("Name is Required");
+            }
+            else
+            {
+                this.PersonName = Name;
+            }
+            
+        }
+        public void getName()
+        {
+            if (string.IsNullOrEmpty(this.PersonName) == true)
+            {
+                
+            }
+            else
+            {
+                Console.WriteLine("The Name of the person is " + this.PersonName);
+            }
+            
+        }
+        public void setAge(int Age)
+        {
+            if(Age > 0)
+            {
+                this.PersonAge = Age;
+            }
+            else
+            {
+                Console.WriteLine("Kindly Enter a valid Age!");
+            }
+            
+        }
+        public void getAge()
+        {
+            if (PersonAge > 0)
+            {
+                Console.WriteLine("The Age of the Person is " + this.PersonAge);
+            }
+            else
+            {
+                
+            }
+            
+        }
+    }
+NOW WE MAKE THE METHODS AS PUBLIC AS THE USERS CAN USE THESE PROPERTIES OUTSIDE THE CLASS, BUT NOT THE VARIABLES
+
+Now in the Main.cs class, we can call the methods like this:
+     public static void Main(string[] args)
+        {
+            Person p = new Person();
+            p.setName("Ankur Goswami");
+            p.getName();
+            p.setAge(21);
+            p.getAge();
+
+            Console.ReadLine();
+        }
+
+PROPERTIES WITH GET AND SET IN C#	
+Properties allow you to control the accessibility of a class variable, and they are recommended way to access variables from the outside in C#. A property is much like
+a combination of a variable and a method. A simple understanding for the properties are like this:
+class SeasonOne
+    {
+        private int Student_ID;
+        private string Student_Name;
+        private string Father_Name;
+
+        public int ID
+        {
+            set
+            {
+                this.Student_ID = value;
+            }
+            get
+            {
+                return this.Student_ID;
+            }
+        }
+
+        public string Std_Name
+        { 
+            set
+            {
+                this.Student_Name = value;
+            }
+            get
+            {
+                return this.Student_Name;
+            }
+        }
+
+    }
+
+Now in the Main.cs file, we call these methods like this:
+public static void Main(string[] args)
+        {
+            SeasonOne season = new SeasonOne();
+            int x = season.ID = 1;
+            string y = season.Std_Name = "Ankur";
+
+            Console.WriteLine("The ID is " + x);
+            Console.WriteLine("The Name is " + y);
+
+            Console.ReadLine();
+        }
+
+NOW THERE ARE FOUR TYPES OF PROPERTIES TO SET AND GET THE VALUES, WHERE WE DON'T NEED TO PERFORM ANY TYPE OF VALIDATION, JUST WE NEED TO SET THE VALUES, THUS WE
+HAVE A CONCEPT OF AUTO-IMPLEMENTED PROPERTIES
+A Simple example is like this:
+    class SeasonOne
+    {
+        public int StudentID { get; set; }
+        public string StudentName { get; set; }
+        public string FatherName { get; set; }
+
+    }
+
+Here we just can add the values and we don't need to create any of the other functions apart from these getter and setter functions.
+
+POLYMORPHISM
+Polymorphism is one of the four pillars of OOP's Programming.Polymorphism in C# is a concept by which we can perform a single action by different ways.
+Polymorphism is derived from two greek words: POLY and MORPHS, which means MANY FORMS respectively. e.g. A man can be a father, a Son, A Husband and a Teacher by 
+profession.
+There are two types of Polymorphism: STATIC POLYMORPHISM(COMPILE TIME POLYMORPHISM) and DYNAMIC POLYMORPHISM(RUN TIME POLYMORPHISM).
+STATIC POLYMORPHISM
+The mechanism of linking a function with an object during compile time is called Static polymorphism , or early binding(Binding before running), or Static Binding.
+There are two methods to implement the static polymorphism: METHOD OR FUNCTION OVERLOADING, OPERATOR OVERLOADING.
+
+METHOD OR FUNCTION OVERLOADING
+You can have multiple definitions for the same function name in the same scope(same class).However, the definition of the function must be different(different signatures).
+
+
+
+
+
+, OPERATOR OVERLOADING, METHOD HIDING, METHOD OVERRIDING, DIFFERENCE, ABSTRACTION(3), INTERFACES(5),
+MULTIPLE INHERITANCE, GENERIC AND GENERIC METHODS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

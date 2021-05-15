@@ -1,0 +1,218 @@
+Linus Torvalds designed GIT.
+
+Commands
+i.) git config --global user.name "Harry Gallahad"
+ii.)  git config --global user.email "harygallahad047@gmail.com"
+iii.) git config --list
+iv.) pwd -> present working directory or ls -> list content in which ever folder you are in 
+v.) cd -> change directory e.g. -> cd directory-name like this cd personal-website
+
+i.) git status
+ii.) To make a new git repositiry : git init
+Now this means that in which ever folder this command is run, that folder has now become the git repository.This means that git will trace all the files in the folder
+iii.) Then we check the status of the repository : git status 
+Then this will show a command of on branch master, branch by-default is the master branch(main branch)
+Now I want to add all the files altogether, thus we need to add the command : 
+iv.) git --a
+This means we want to add all the files in the staging area
+
+Now we want to give a message, thus we run the command like this:
+git commit -m "Comment of your choice"
+e.g. git comiit -m "Initial commit"
+
+Now if you want to know all the commits, then we run the command : git log
+
+Now suppose we add any file and then we get the status, then it will give the information about the status that there is information about untracked file. Now suppose
+we have made changes in two files and I only want to upload only one file in the staging area and not the other, 
+thus we can do it like this: git add html/sample-1.html
+
+and now when we type : git status
+Now this will show the name of the files which are added and not added respectively.
+
+NOW REVISION FOR THE ABOVE NOTES
+i.) git status
+i.) git init
+However, if there is already an existing git repository, then don't run git init, else run git init
+iii.) git add --a or there is one more similar command -> git add .
+Now to bring all the changes in the staging area, then we run this command
+iv.) git status(This is to check weather we have committed all the changes which we want to stage)
+v.) git log (To check all the logs commit)
+
+NOW IF YOU WANT TO STOP TRACKING OF ALL THE FILES, AND WANT TO REMOVE ALL THE FILES FROM THERE THEN USE THIS DANGEROUS COMMAND
+rm -rf .git
+then this will delete the repository
+then git status
+
+THE CLONE COMMAND
+The clone command is used to clone the repository from the github onto your local machine and this can be done like this:
+git clone https://github.com/github/personal-website.git
+ and this will create a clone from github to the local machine
+
+THE OVERALL PROCESS IS LIKE THIS:
+$ git add --a
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitattributes
+
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitattributes
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitattributes
+
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git add .
+*/ is not a valid attribute name: .gitattributes:3
+*/ is not a valid attribute name: .gitattributes:4
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git add .
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitattributes
+
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git add .
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitattributes
+
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git commit -m "Changed .gitattributes"
+*/ is not a valid attribute name: .gitattributes:3
+*/ is not a valid attribute name: .gitattributes:4
+*/ is not a valid attribute name: .gitattributes:3
+*/ is not a valid attribute name: .gitattributes:4
+[master e82965c] Changed .gitattributes
+ 1 file changed, 2 insertions(+)
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Ankur Goswami@DESKTOP-HKTR0JA MINGW64 /d/GIT PROJECTS/TensorFlow/personal-website (master)
+
+FILE STATUS LIFECYCLE
+There is a .git folder in each folder, and this .git folder has got all information of all the version controls, and this folder keeeps emitting files which you want to
+be emitted from this folder, as per according to the dates
+File status lifecycle means that we track all the information for all the applications.
+
+Untracked -> "git add --a" -> unmodified(staged) -> Now we change the files in the repository, thus they become modified -> 
+"git status" -> No git repository added -> "git init" -> repository made but untracked, Means now the level is untracked -> "git add --a" -> Now the files are in the tracking
+section(Means the changes are now staged, or just unmodified, and thus files are in the staging area)
+Now suppose we changed some files and we give the command -> "git status" 
+Now you see that the files are both in the staging area and also in the modified area as well and the file is in two areas because it I did put it in the staging area
+and then we change the files.
+Staging area : means ready to commit and we put files in the staging area as whenever I put the file in commit, they go in the commit area. Now if we change some of 
+the files, thus the files which we ready to go in the commit area will still go in the commit area even if you changed some files.
+Now if you fire the command to add the new changed command, i.e. for e.g. -> hriscustom.css like this: "git add hriscustom.css"
+Now if you fire "git status"
+
+IGNORING FILES IN GIT
+Now the very first command which we will have to run is -> git status (This command gives us the status of the files)
+Now here we will understand the method to ignore some of the files which we want to ignore in our application, for e.g. error log files and these files are
+generated and now we want that these files do not effect the other files of my software. Now to get the information for these files, what we do is that at first we run
+the status to know such files like this: "git status"
+Now to remove such files, we add a new file with name ".gitignore"
+To add a new file using git, we use this command -> "touch filename", e.g. "touch .errorlog" and similarly, "touch .gitignore"
+Now what we do, to make all the files to be ignored, we add the name of all such files into this .gitignore file and then when we type "git status", we see that all such 
+files will be ignored.
+
+Now when we try to change anything, any text inside of the error.log file, we just see that git will ignore all such files from the system.
+NOW AN ISSUE
+Now consider a case where rather get not just one error.log fie but a lot of error.log files, thus how do we ignore these all files.
+SOLUTION
+The solution to this is very simple, open .gitignore file and there we write this line: " *.log " and just save the file. Now when we run the "git status" file, 
+we see that all these files will be ignored
+
+Similarly, we can ignore the directories(folders)
+THUS NOW I WANT THAT THIS DIRECTORY SHOULD NOT BE TRACKED, THUS WE CAN DO IT LIKE THIS:
+Open the .gitignore file and there we just simply add the directory names which we want to ignore, like this: Directory-1/
+
+AN IMPORTANT NOTE
+Suppose we have two/multiple directories/files with the same name in our application which we have put in the .gitignore file, thus it will ignore 
+all the directories/files with the same. But now we want to ignore the one directory/file and not the other. Thus what we do, we open the .gitignore file and there
+we write like this: "/filename/", e.g. "/directory-1/"
+Similarly, we can ignore the paths as well
+
+"git diff" command compares the working directory with the staging area
+
+
+SKIPPING THE STAGING AREA
+
+DELETING AND RENAMING THE FILES IN GIT
+Suppose that in git, we have renamed the files, but initially git will think like you have deleted that file and added a new file(the renamed one), but when you put 
+the files in the staging area(git add --a), then we come to know that you have renamed the files.
+Now we want to remove the files from the repository using the git command and not deleting the files manually. Thus we can do it using this command:
+"git rm file-name.file-format", the result will be like this: "git rm Third\ file.txt", and then eventually the file will be removed.
+
+Renaming the files in git
+git mv first.txt first_renamed.txt
+
+Now in our git, we want the certain files to be untracked from the repository, thus we can do it like this: "git rm --cached file-name.file-format"
+
+VIEW THE COMMITS IN THE GIT
+There are a few things which you need to understand, kind of short-cuts: "git clone https://github.com/pandas-dev/pandas.git folder-name"
+Here whatever folder name you give, that will be the name of the folder. Now to view all the commits, the command is: "git log"
+Also Now, if you want to see the changes made with the commit, then we use this command: "git log -p". Also, if you want to see the Number of comments, then you give the 
+comment: "git log -p -3 or -2 and so on". There is also a very interesting command, "git log --stat". Now what this command does is that This command gives all the
+details of the changes in the files with the number of files added or deleted.
+
+NOW IF YOU WANT TO PRINT ALL THE COMMANDS IN ONE LINE, THEN THE COMMAND IS: "git log --pretty=oneline"
+AUTHOR - THE PERSON WHO CREATES THE FILE, FROM SCRATCH
+COMMITOR - THE PERSON WHO HAS DONE SOME CHANGES IN THE FILES.
+
+DATE FILTER GIT COMMANDS
+You can filter the data using the commands to filter as per the days, weeks and months and the commands are:
+"git log --since=2.days" and similarly like for the weeks, months, and years.
+
+
+CHANGING THE COMMITS
+Suppose we need to implement changes to some of the already applied commits, or we have made some changes in the files, and we want to include that in the 
+previously added commits, thus we can do that using this command: "git commit --amend"
+Now when you run this command, then there will an editor opened
+
+WORKING WITH REMOTE REPOSITORIES
+Remote repositories means the code that is already being put on the server. Thus Now we are going to explore those files in this section.
+CREATE AN ACCOUNT ON: "https://github.com/"
+
+
+
+
+
+
+
